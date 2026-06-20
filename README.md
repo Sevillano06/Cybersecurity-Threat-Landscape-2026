@@ -38,6 +38,20 @@ El panorama de amenazas cibernéticas es el entorno dinámico donde convergen vu
     style E fill:#cc0000,stroke:#333,stroke-width:2px,color:#fff 
 ```
 
+## 🔄 Flujo de Respuestas a Incidentes 
+```mermaid
+graph TD
+    A([1. Preparación]) --> B([2. Detección y Análisis])
+    B --> C([3. Contención])
+    C --> D([4. Erradicación])
+    D --> E([5. Recuperación])
+    E --> F([6. Actividades Post-Incidente])
+    F -. Lecciones Aprendidas .-> A
+    style A fill:#005b96,color:#fff
+    style B fill:#03396c,color:#fff
+    style C fill:#011f4b,color:#fff
+```
+
 ## Conclusiones y Recomendaciones
 La defensa perimetral tradicional es insuficiente. Se recomienda:
 1. Implementar marcos de trabajo sólidos como un SGSI alineado a ISO 27001.
