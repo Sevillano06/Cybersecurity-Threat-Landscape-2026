@@ -28,7 +28,15 @@ El panorama de amenazas cibernéticas es el entorno dinámico donde convergen vu
 * **Incident Response:** Enfoque estructurado para gestionar las secuelas de una brecha.
 
 ## Ciclo de Ataque Moderno
-`Atacante` ➔ `Reconocimiento` ➔ `Phishing` ➔ `Compromiso Inicial` ➔ `Malware` ➔ `Persistencia` ➔ `Ransomware` ➔ `Exfiltración` ➔ `Impacto al negocio`
+```mermaid
+ graph LR
+    A[Reconocimiento] -->|OSINT| B(Phishing / Vector Inicial)
+    B --> C{Compromiso Inicial}
+    C -->|Descarga Payload| D[Persistencia y Mov. Lateral]
+    D --> E((Exfiltración / Ransomware))
+    style A fill:#4a4a4a,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#cc0000,stroke:#333,stroke-width:2px,color:#fff 
+```
 
 ## Conclusiones y Recomendaciones
 La defensa perimetral tradicional es insuficiente. Se recomienda:
