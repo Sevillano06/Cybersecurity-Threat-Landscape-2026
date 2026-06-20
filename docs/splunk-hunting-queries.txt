@@ -1,0 +1,26 @@
+==========================================
+
+SPLUNK THREAT HUNTING QUERIES - SOC L1/L2
+
+Autor: Angel Miguel Sevillano Cespedes
+
+==========================================
+
+1. Detección de múltiples inicios de sesión fallidos (Posible Fuerza Bruta)
+
+index=windows sourcetype=WinEventLog:Security EventCode=4625
+| stats count by user, src_ip
+| where count > 5
+| sort - count
+
+2. Identificación de procesos codificados en PowerShell (Evasión de Defensa)
+
+index=windows sourcetype=WinEventLog:Security EventCode=4688 ProcessName="powershell.exe"
+| search CommandLine="-enc" OR CommandLine="-EncodedCommand"
+| table _time, host, user, CommandLine
+
+3. Tráfico saliente inusual por puertos no estándar (Posible C2)
+
+index=firewall action=allowed dest_port!=80 dest_port!=443 dest_port!=53
+| stats count by src_ip, dest_ip, dest_port
+| sort - count
