@@ -1,5 +1,4 @@
 
-```markdown
 # Cybersecurity Threat Landscape 2026
 
 **Autor:** Angel Miguel Sevillano Cespedes  
@@ -31,7 +30,7 @@ El panorama de amenazas cibernéticas es el entorno dinámico donde convergen vu
 
 ## 🔄 Ciclo de Ataque Moderno (Attack Chain)
 ```mermaid
-graph TD
+graph LR
     A[Reconocimiento] -->|OSINT| B(Phishing / Vector Inicial)
     B --> C{Compromiso Inicial}
     C -->|Descarga Payload| D[Persistencia y Mov. Lateral]
